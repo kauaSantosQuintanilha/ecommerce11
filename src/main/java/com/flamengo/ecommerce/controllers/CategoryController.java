@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/category")
+@RequestMapping("/api/category") //localhost:8080/api/category
 public class CategoryController {
-     @Autowired
+    @Autowired
     private CategoryService categoryService;
 
-     @GetMapping
+    @GetMapping
     public ResponseEntity<List<CategoryDTO>> getAllCategory() {
-         List<CategoryDTO> list=categoryService.findAll();
-         return  ResponseEntity.ok(list);
-     }
+        List<CategoryDTO> list = categoryService.findAll();
+        return ResponseEntity.ok(list);
+    }
 }

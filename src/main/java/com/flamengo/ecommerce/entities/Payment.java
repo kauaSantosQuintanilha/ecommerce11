@@ -2,8 +2,11 @@ package com.flamengo.ecommerce.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
-import java.security.Timestamp;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -12,8 +15,10 @@ public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Timestamp moment;
-    private String  status;
+    private LocalDateTime moment;
 
+    @OneToOne
+    @MapsId //maps the id of the order to the payment
+    private Order order;
 
 }

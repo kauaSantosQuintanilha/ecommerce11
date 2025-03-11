@@ -5,8 +5,7 @@ import lombok.Data;
 
 
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -18,14 +17,12 @@ public class User {
     private Long id;
     private String name;
     private String email;
-    private String phone;
-    private LocalDate birth_date;
     private String password;
+    private String phone;
+    private LocalDate birthDate;
     private String roles;
 
     @OneToMany(mappedBy = "user")
-    private Set<Order> orders ;
-
-
+    private List<Order> orders;
 
 }

@@ -1,18 +1,20 @@
 package com.flamengo.ecommerce.dtos;
 
-import com.flamengo.ecommerce.entities.Product;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-import java.util.Set;
-
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class CategoryDTO {
+public class UserDTO {
     private Long id;
     private String name;
+    private String email;
+    private String password;
+    private String phone;
+    private LocalDate birthDate;
+    private String roles;
 }
